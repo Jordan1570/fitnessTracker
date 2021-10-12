@@ -1,33 +1,18 @@
 const router = require('express').Router();
-const { Workout } = require('../models');
+const path = require('path')
 
-router.get('/', async (req, res) => {
-    try {
-
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-router.put('/continue-workout', async (req, res) => {
-    try {
-        
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-router.post('/new-workout', async (req, res) => {
-    try {
-        
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
 router.get('/stats', async (req, res) => {
     try {
+        res.sendFile(path.join(__dirname, "../public/stats.html"))
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
+router.get('/exercise', async (req, res) => {
+    try {
+        res.sendFile(path.join(__dirname, "../public/exercise.html"))
     } catch (err) {
         res.status(500).json(err);
     }
