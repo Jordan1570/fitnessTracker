@@ -12,13 +12,6 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
-// app.get('/stats', async (req, res) => {
-//   try {
-//       res.sendFile(path.join(__dirname, "./public/stats.html"))
-//   } catch (err) {
-//       res.status(500).json(err);
-//   }
-// });
 
 app.use(routes)
 
